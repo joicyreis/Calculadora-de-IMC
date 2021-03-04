@@ -20,15 +20,15 @@ export class HomePage {
 
   onCalculate() {
     const imc = this.weight / (this.height * this.height);
-    if(imc <= 18.5) {
+    if(imc < 18.5) {
       this.alert = "Você está abaixo do peso ideal."
-    } else if(imc > 18.5 && imc <= 24.9) {
+    } else if(imc >= 18.5 && imc <= 24.9) {
       this.alert = "Parabéns! Você está no peso ideal."
-    } else if(imc > 24.9 && imc <= 29.9) {
+    } else if(imc >= 25 && imc <= 29.9) {
       this.alert = "Você está acima do peso ideal."
-    } else if(imc > 29.9 && imc <= 39.9) {
+    } else if(imc >= 30 && imc <= 39.9) {
       this.alert = "Condiderado obesidade."
-    } else if(imc > 39.9) {
+    } else if(imc >= 40) {
       this.alert = "Considerado obesidade grave."
     }
     this.showMessage(`Seu IMC é <b>${imc.toFixed(2)}</b>. ${this.alert}`);
